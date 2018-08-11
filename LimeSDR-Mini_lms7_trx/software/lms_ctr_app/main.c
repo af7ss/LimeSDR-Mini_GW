@@ -120,57 +120,60 @@ void set_led(unsigned char led_pattern)
  */
 void Configure_LM75(void)
 {
+#if 0
 	int spirez;
-
+#endif
 	// OS polarity configuration
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x01, 0);				// Pointer = configuration register
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x01, 0);				// Pointer = configuration register
 	//spirez = I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 1);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x04, 1);				//Configuration value: OS polarity = 1, Comparator/int = 0, Shutdown = 0
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x04, 1);				//Configuration value: OS polarity = 1, Comparator/int = 0, Shutdown = 0
 
 	// THYST configuration
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x02, 0);				// Pointer = THYST register
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x02, 0);				// Pointer = THYST register
 	//spirez = I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 1);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 45, 0);				// Set THYST H
-	spirez = I2C_write(I2C_OPENCORES_0_BASE,  0, 1);				// Set THYST L
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 45, 0);				// Set THYST H
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE,  0, 1);				// Set THYST L
 
 	// TOS configuration
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x03, 0);				// Pointer = TOS register
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x03, 0);				// Pointer = TOS register
 	//spirez = I2C_start(I2C_OPENCORES_0_BASE, LM75_I2C_ADDR, 1);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 55, 0);				// Set TOS H
-	spirez = I2C_write(I2C_OPENCORES_0_BASE,  0, 1);				// Set TOS L
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 55, 0);				// Set TOS H
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE,  0, 1);				// Set TOS L
 
 }
 
 //
 void testEEPROM(void)
 {
+#if 0
 	int spirez;
 	uint8_t converted_val;
+#endif
 
 	//EEPROM Test, RD from 0x0000
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
 
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 1);
-	converted_val = I2C_read(I2C_OPENCORES_0_BASE, 1);
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 1);
+	/* converted_val = */ I2C_read(I2C_OPENCORES_0_BASE, 1);
 
 	//WR
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x01, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x5A, 1);
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x01, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x5A, 1);
 
 	//EEPROM Test, RD from 0x0001
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
-	spirez = I2C_write(I2C_OPENCORES_0_BASE, 0x01, 0);
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x00, 0);
+	/* spirez = */ I2C_write(I2C_OPENCORES_0_BASE, 0x01, 0);
 
-	spirez = I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 1);
-	converted_val = I2C_read(I2C_OPENCORES_0_BASE, 1);
+	/* spirez = */ I2C_start(I2C_OPENCORES_0_BASE, EEPROM_I2C_ADDR, 1);
+	/* converted_val = */ I2C_read(I2C_OPENCORES_0_BASE, 1);
 }
 
 /*
@@ -221,23 +224,27 @@ void boot_from_flash(void)
 int main()
 {
     uint32_t* dest = (uint32_t*)glEp0Buffer_Tx;
+#if 0
     unsigned char led_pattern = 0x00;
+#endif
     //volatile uint32_t *uart = (volatile uint32_t*) UART_BASE;
     //char *str = "Hello from NIOS II\r\n";
 
     volatile int spirez;
     char cnt = 0;
     int k;
-
+#if 0
     uint8_t status = 0;
-
+#endif
     //Reset LMS7
     IOWR(LMS_CTR_GPIO_BASE, 0, 0x06);
     IOWR(LMS_CTR_GPIO_BASE, 0, 0x07);
 
     //
+#if 0
     uint8_t spi_wrbuf1[2] = {0x00, 0x20};
     uint8_t spi_wrbuf2[6] = {0x80, 0x20, 0xFF, 0xFD, 0x00, 0x20};
+#endif
     //uint8_t spi_rdbuf[2] = {0x01, 0x00};
 
     // Write initial data to the DAC
@@ -1126,7 +1133,7 @@ int main()
      		//Send response to the command
         	for(cnt=0; cnt<64/sizeof(uint32_t); ++cnt)
         	{
-        		IOWR(AV_FIFO_INT_0_BASE, 0, dest[cnt]);
+        		IOWR(AV_FIFO_INT_0_BASE, 0, dest[(int)cnt]);
         	};
 
         	// If boot from flash CMD is executed FPGA GW is loaded from internal FLASH (image 1)

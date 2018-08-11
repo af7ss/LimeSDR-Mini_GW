@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2_cpu' in SOPC Builder design 'lms_ctr'
  * SOPC Builder design path: ../../lms_ctr.sopcinfo
  *
- * Generated: Wed Jan 17 14:43:00 EET 2018
+ * Generated: Sat Aug 11 14:24:12 MST 2018
  */
 
 /*
@@ -184,18 +184,24 @@
 #define ALT_NUM_EXTERNAL_INTERRUPT_CONTROLLERS 0
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
-#define ALT_STDERR "/dev/null"
-#define ALT_STDERR_BASE 0x0
-#define ALT_STDERR_DEV null
-#define ALT_STDERR_TYPE ""
-#define ALT_STDIN "/dev/null"
-#define ALT_STDIN_BASE 0x0
-#define ALT_STDIN_DEV null
-#define ALT_STDIN_TYPE ""
-#define ALT_STDOUT "/dev/null"
-#define ALT_STDOUT_BASE 0x0
-#define ALT_STDOUT_DEV null
-#define ALT_STDOUT_TYPE ""
+#define ALT_STDERR "/dev/uart"
+#define ALT_STDERR_BASE 0x202080
+#define ALT_STDERR_DEV uart
+#define ALT_STDERR_IS_UART
+#define ALT_STDERR_PRESENT
+#define ALT_STDERR_TYPE "altera_avalon_uart"
+#define ALT_STDIN "/dev/uart"
+#define ALT_STDIN_BASE 0x202080
+#define ALT_STDIN_DEV uart
+#define ALT_STDIN_IS_UART
+#define ALT_STDIN_PRESENT
+#define ALT_STDIN_TYPE "altera_avalon_uart"
+#define ALT_STDOUT "/dev/uart"
+#define ALT_STDOUT_BASE 0x202080
+#define ALT_STDOUT_DEV uart
+#define ALT_STDOUT_IS_UART
+#define ALT_STDOUT_PRESENT
+#define ALT_STDOUT_TYPE "altera_avalon_uart"
 #define ALT_SYSTEM_NAME "lms_ctr"
 
 
@@ -515,7 +521,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1509460762
+#define SYSID_QSYS_0_TIMESTAMP 1534022061
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

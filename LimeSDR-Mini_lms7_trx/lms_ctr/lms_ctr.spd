@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="simulation/lms_ctr.vhd" type="VHDL" />
+ <file path="simulation/lms_ctr_rst_controller.vhd" type="VHDL" />
+ <file path="simulation/lms_ctr_rst_controller_001.vhd" type="VHDL" />
+ <topLevel name="lms_ctr" />
+ <deviceFamily name="max10" />
+ <modelMap
+   controllerPath="lms_ctr.onchip_flash_0"
+   modelPath="lms_ctr.onchip_flash_0" />
+ <modelMap
+   controllerPath="lms_ctr.onchip_memory2_0"
+   modelPath="lms_ctr.onchip_memory2_0" />
+</simPackage>
