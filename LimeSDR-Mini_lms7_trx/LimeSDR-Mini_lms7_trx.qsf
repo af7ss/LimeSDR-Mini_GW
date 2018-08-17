@@ -375,7 +375,6 @@ set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HW_VER[0]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HW_VER[1]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HW_VER[2]
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to HW_VER[3]
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VHDL_FILE src/rx_path_top/smpl_cmp/synth/smpl_cmp.vhd
 set_global_assignment -name VHDL_FILE src/dyn_ps/synth/pll_ps_top.vhd
 set_global_assignment -name VHDL_FILE src/dyn_ps/synth/pll_ps_fsm.vhd
@@ -474,3 +473,4 @@ set_global_assignment -name VHDL_FILE src/rx_path_top/bit_pack/synth/bit_pack.vh
 set_global_assignment -name VHDL_FILE src/rx_path_top/smpl_cnt/synth/smpl_cnt.vhd
 set_global_assignment -name VHDL_FILE src/rx_path_top/rx_path/synth/rx_path_top.vhd
 set_global_assignment -name SDC_FILE Clock_groups.sdc
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
